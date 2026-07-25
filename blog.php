@@ -14,7 +14,7 @@ if (!in_array($page, $allowed_pages)) {
 }
 
 require_once 'includes/header.php';
-$limit = 3;
+$limit = 9;
 $blog_page = isset($_GET['blog_page']) ? (int) $_GET['blog_page'] : 1;
 if ($blog_page < 1) {
     $blog_page = 1;
