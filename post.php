@@ -54,6 +54,7 @@ mysqli_stmt_execute($update);
     <div class="container">
         <h1><?php echo htmlspecialchars($row['blog_title']); ?></h1>
         <p> <?php echo nl2br(htmlspecialchars($row['blog_contents'])); ?></p>
+        <p><strong>Date and Time:</strong><?php echo htmlspecialchars($row['created_at']); ?></p>
         <p><strong>Category:</strong><?php echo htmlspecialchars($row['blog_category']); ?></p>
         <p><strong>Author:</strong><?php echo htmlspecialchars($row['blog_author']); ?></p>
         <p><strong>Views:</strong><?php echo $row['blog_hits']; ?></p>
