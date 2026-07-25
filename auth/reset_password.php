@@ -1,9 +1,12 @@
+<!-- Form for new password field -->
 <?php
 session_start();
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../includes/functions.php';
-
+?>
+<?php require_once '../includes/header.php'; ?>
+<?php
 $token = trim($_GET['token'] ?? '');
 if ($token === '') {
     header('Location: ' . BASE_URL . '/login.php?reset=invalidtoken');
@@ -39,19 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Password</title>
-</head>
-<body>
-  <h1>Reset Password</h1>
-  <p class="form-description">Please enter your new password.</p>
+<div class="container-form">
+<div class="title-form">Reset Password</div>
+<p class="form-desc">Please enter your new password.</p>
   <form class="form-box" method="POST" action="../auth/reset_password.php?token=<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>" onsubmit="return validateForm()">
     <input type="password" name="password" placeholder="New Password" required>
-    <button type="submit" name="reset_password">Update Password</button>
+    <button type="submit" name="reset_password" class="formbtn">Update Password</button>
   </form>
-</body>
-</html>
+</div>
+
+
+<?php require_once '../includes/footer.php'; ?>
