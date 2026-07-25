@@ -19,3 +19,29 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+// post blog
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const views = document.querySelector(".staticblog-views");
+
+    let count = 0;
+    const target = 24563;
+
+    const timer = setInterval(() => {
+
+        count += Math.ceil(target / 100);
+
+        if (count >= target) {
+            count = target;
+            clearInterval(timer);
+        }
+
+        views.innerHTML = "👁 " + count.toLocaleString() + " Views";
+
+    }, 20);
+
+});
+
+// end blog
