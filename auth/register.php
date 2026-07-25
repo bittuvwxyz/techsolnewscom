@@ -64,7 +64,7 @@ $message = sprintf(
 $mailStatus = sendMail($email, 'Verify your email', $message);
 
 $_SESSION['verify_alert'] = $mailStatus === true
-    ? 'Verification email sent. Please verify your email before login.'
+    ? 'Please verify your email.'
     : 'Registration was successful, but the verification email could not be sent.';
 
 header('Location: ' . BASE_URL . '/login.php?register=success' . ($mailStatus === true ? '&verify=emailsent' : ''));

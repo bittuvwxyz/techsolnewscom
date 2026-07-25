@@ -24,16 +24,15 @@ unset($_SESSION['verify_alert']);
 endif;
 ?>
 
-<div class="title-text">Login</div>
-  <p class="form-description">Please enter your credentials to login.</p>
+<div class="title-form">Login</div>
+  <p class="form-desc">Please enter your credentials to login.</p>
   <form class="form-box" method="POST" action="auth/login.php" onsubmit="return validateForm()">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Password" required>
-    <button type="submit" name="login">Login</button>
+    <button type="submit" name="login" class="formbtn">Login</button>
   </form>
-  <div class="link">Don't have an account? 
-    <a href="register.php">Register</a>
-  </div>
+  <div class="formlink"><a href="register.php">Register</a></div>
+  <div class="formlink"><a href="reset.php">Forgot Password</a></div>
 
 </div>
 

@@ -7,11 +7,11 @@ require_once 'includes/functions.php';
 
 
 <div class="container-form">
-<div class="title-text">Reset Password</div>
-<p class="form-description">Please enter your email to receive a reset link.</p>
+<div class="title-form">Reset Password</div>
+<p class="form-desc">Please enter your email.</p>
   <form class="form-box" method="POST" action="/auth/reset.inc.php" onsubmit="return validateForm()">
     <input type="email" name="email" placeholder="Email" required>
-    <button type="submit" name="reset_password">Reset Password</button>
+    <button type="submit" name="reset_password" class="formbtn">Reset Password</button>
   </form>
 </div>
 
