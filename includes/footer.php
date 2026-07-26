@@ -16,7 +16,7 @@
             <h4>Legal</h4>
             <a href="<?= BASE_URL ?>/about.php">About Us</a>
             <a href="<?= BASE_URL ?>/contact.php">Contact Us</a>
-            <a href="<?= BASE_URL ?>/policy.php">Policy</a>
+            <a href="<?= BASE_URL ?>/privacy.php">Privacy</a>
             <a href="<?= BASE_URL ?>/terms.php">Terms</a>
             <a href="<?= BASE_URL ?>/disclaimer.html">Disclaimer</a>
           </div>
