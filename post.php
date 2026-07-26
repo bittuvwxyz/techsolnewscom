@@ -44,22 +44,17 @@ $update = mysqli_prepare($conn,"UPDATE blog SET blog_hits = blog_hits + 1 WHERE 
 mysqli_stmt_bind_param($update,"i",$row['blog_id']);
 mysqli_stmt_execute($update);
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title><?php echo htmlspecialchars($row['blog_title']); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($row['blog_short_description']); ?>" >
-</head>
-<body>
-    <div class="container">
-        <h1><?php echo htmlspecialchars($row['blog_title']); ?></h1>
-        <p> <?php echo nl2br(htmlspecialchars($row['blog_contents'])); ?></p>
-        <p><strong>Date and Time:</strong><?php echo htmlspecialchars($row['created_at']); ?></p>
-        <p><strong>Category:</strong><?php echo htmlspecialchars($row['blog_category']); ?></p>
-        <p><strong>Author:</strong><?php echo htmlspecialchars($row['blog_author']); ?></p>
-        <p><strong>Views:</strong><?php echo $row['blog_hits']; ?></p>
+    <div class="staticblog-container">
+        <h1 class="staticblog-heading"><?php echo htmlspecialchars($row['blog_title']); ?></h1>
+        <h3 class="staticblog-shortdesc"><?php echo htmlspecialchars($row['blog_short_description']); ?></h3>
+        <hr>
+        <p class="staticblog-author"><strong>Author:</strong><?php echo htmlspecialchars($row['blog_author']); ?></p>
+        <p class="staticblog-category"><strong>Category:</strong><?php echo htmlspecialchars($row['blog_category']); ?></p>
+        <p class="staticblog-views"><strong>Views:</strong><?php echo $row['blog_hits']; ?></p>
+        <p class="staticblog-datetime"><strong>Date and Time:</strong><?php echo htmlspecialchars($row['created_at']); ?></p>
+        <br><br><hr>
+        <!-- <p class="staticblog-image"> <?php echo nl2br(htmlspecialchars($row['blog_image'])); ?></p> -->
+        <p class="staticblog-paragraph"> <?php echo nl2br(htmlspecialchars($row['blog_contents'])); ?></p>
     </div>
-</body>
-</html>
 
 <?php require_once 'includes/footer.php'; ?>

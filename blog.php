@@ -14,7 +14,7 @@ if (!in_array($page, $allowed_pages)) {
 }
 
 require_once 'includes/header.php';
-$limit = 9;
+$limit = 30;
 $blog_page = isset($_GET['blog_page']) ? (int) $_GET['blog_page'] : 1;
 if ($blog_page < 1) {
     $blog_page = 1;
@@ -53,7 +53,7 @@ $result = mysqli_query($conn, $sql);
                             <h3><a href="post.php?blog_id=<?php echo urlencode($row['blog_id']); ?>"><?php echo htmlspecialchars($row['blog_title'], ENT_QUOTES, 'UTF-8'); ?></a></h3>
                             <p><?php echo htmlspecialchars($row['blog_short_description'] ?? $row['blog_post'], ENT_QUOTES, 'UTF-8'); ?></p>
                             <span class="tagcad"><?php echo htmlspecialchars($row['blog_category'] ?? $row['blog_post'], ENT_QUOTES, 'UTF-8'); ?></span>
-                            <span class="tagcad">was written by <?php echo htmlspecialchars($row['blog_author'] ?? $row['blog_post'], ENT_QUOTES, 'UTF-8'); ?></span>
+                            <span class="tagcad">written by <?php echo htmlspecialchars($row['blog_author'] ?? $row['blog_post'], ENT_QUOTES, 'UTF-8'); ?></span>
                             <span class="tagcad">on  <?php echo htmlspecialchars(date('F j, Y', strtotime($row['created_at'] ?? $row['blog_post'])), ENT_QUOTES, 'UTF-8'); ?></span>
                         </article>
                     <?php endwhile; ?>
