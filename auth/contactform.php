@@ -87,10 +87,19 @@ $messageBody = sprintf(
 );
 
 $recipientEmail = defined('CONTACT_EMAIL') ? CONTACT_EMAIL : MAIL_FROM_EMAIL;
-$mailStatus = sendMail($recipientEmail, 'New Contact Form Submission', $messageBody);
+$senderCopyBody = sprintf(
+    'Hello %s,<br><br>Thank you for contacting TechSolNews.com. We have received your message and will get back to you soon.<br><br>Your message:<br>%s',
+    htmlspecialchars($name, ENT_QUOTES, 'UTF-8'),
+    nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'))
+);
 
-if ($mailStatus) {
+$adminMailSent = sendMail($recipientEmail, 'New Contact Form Submission', $messageBody);
+$senderMailSent = sendMail($email, 'We received your message', $senderCopyBody);
+
+if ($adminMailSent && $senderMailSent) {
     $_SESSION['contact_success'] = 'Your message has been sent successfully.';
+} elseif ($adminMailSent) {
+    $_SESSION['contact_success'] = 'Your message was received. We sent the notification to our team.';
 } else {
     $_SESSION['contact_error'] = 'Your message was saved, but the email could not be sent at this time.';
 }
