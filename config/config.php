@@ -12,7 +12,7 @@ define('SITE_NAME', 'Techsolnews.com');
 
 define('MAIL_HOST', getenv('MAIL_HOST') ?: 'smtp.gmail.com');
 define('MAIL_USERNAME', getenv('MAIL_USERNAME') ?: 'bittu32954@gmail.com');
-define('MAIL_PASSWORD', getenv('MAIL_PASSWORD') ?: '');
+define('MAIL_PASSWORD', getenv('MAIL_PASSWORD') ?: 'neqqqxicinxobxyw');
 define('MAIL_FROM_EMAIL', getenv('MAIL_FROM_EMAIL') ?: 'bittu32954@gmail.com');
 define('MAIL_FROM_NAME', getenv('MAIL_FROM_NAME') ?: 'Techsolnews.com');
 ?>

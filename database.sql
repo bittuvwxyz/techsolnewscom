@@ -25,7 +25,30 @@ CREATE TABLE IF NOT EXISTS blog (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO blog (blog_title, blog_short_description, blog_contents, blog_category, blog_author)
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    ip_address VARCHAR(45) DEFAULT NULL,
+    user_agent TEXT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO blog (
+    blog_title,
+    blog_short_description,
+    blog_contents,
+    blog_category,
+    blog_author
+)
 VALUES
-('Welcome to TechSolNews', 'A modern news platform built with PHP and MySQL.', 'This is a starter post for your blog section. You can update or replace it from the database.', 'General', 'Admin')
-ON DUPLICATE KEY UPDATE blog_title = VALUES(blog_title);
+(
+    'Welcome to TechSolNews',
+    'A modern news platform built with PHP and MySQL.',
+    'This is a starter post for your blog section. You can update or replace it from the database.',
+    'General',
+    'Admin'
+)
+ON DUPLICATE KEY UPDATE
+blog_title = VALUES(blog_title);
