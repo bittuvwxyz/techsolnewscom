@@ -1,4 +1,3 @@
-
 <footer>
       <div class="container">
         <div class="footer-grid">
@@ -18,7 +17,8 @@
             <a href="<?= BASE_URL ?>/contact.php">Contact Us</a>
             <a href="<?= BASE_URL ?>/privacy.php">Privacy</a>
             <a href="<?= BASE_URL ?>/terms.php">Terms</a>
-            <a href="<?= BASE_URL ?>/disclaimer.html">Disclaimer</a>
+            <a href="<?= BASE_URL ?>/disclaimer.php">Disclaimer</a>
+            <a href="<?= BASE_URL ?>/cookies.php">Cookies</a>
           </div>
         </div>
         <div class="copyright">
